@@ -131,6 +131,7 @@ if __name__ == '__main__':
         run('systemctl mask walinuxagent', shell=True, check=True)
 
     run('systemctl disable apt-daily-upgrade.timer apt-daily.timer dpkg-db-backup.timer motd-news.timer', shell=True, check=True)
+    run('systemctl disable esm-cache.service apt-news.service', shell=True, check=True)
     run('systemctl daemon-reload', shell=True, check=True)
     run('systemctl enable scylla-image-setup.service', shell=True, check=True)
     run('systemctl enable scylla-image-post-start.service', shell=True, check=True)
